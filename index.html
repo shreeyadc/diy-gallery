@@ -1,0 +1,180 @@
+<!-- 
+October 29, 2021
+Shreeya Champaneri
+Website Assignment
+Home Page
+-->
+<html>
+<head>
+	<title>
+		Shreeya's DIY Gallery
+	</title>
+	<link rel="stylesheet" href="style.css">
+
+
+<style>
+		* {
+			box-sizing: border-box
+		}
+
+		body {
+			font-family: Verdana, sans-serif;
+			margin: 0
+		}
+
+		.mySlides {
+			display: none
+		}
+
+		img {
+			vertical-align: middle;
+		}
+
+		/* Slideshow container */
+		.slideshow-container {
+			width: 33%; 
+			position: absolute;
+			left: 1%;
+      top: 55%;
+    }
+
+		/* Next & previous buttons */
+		.prev,
+		.next {
+			cursor: pointer;
+			position: absolute;
+			top: 95%;
+      padding: 25px;
+			color: white;
+			font-weight: bold;
+			font-size: 18px;
+			transition: 0.6s ease;
+			border-radius: 0 3px 3px 0;
+			user-select: none;
+		}
+
+		/* Position the "next button" to the right */
+		.next {
+			right: -56%;
+			border-radius: 3px 0 0 3px;
+		}
+
+    .prev {
+      right: 58%;
+    }
+
+		/* On hover, add a black background color with a little bit see-through */
+		.prev:hover,
+		.next:hover {
+			background-color: rgba(51, 255, 196, 0.8);
+		}
+
+		/* Fading animation */
+		.fade {
+			-webkit-animation-name: fade;
+			-webkit-animation-duration: 1.5s;
+			animation-name: fade;
+			animation-duration: 1.5s;
+		}
+
+		@-webkit-keyframes fade {
+			from {
+				opacity: .4
+			}
+			to {
+				opacity: 1
+			}
+		}
+
+		@keyframes fade {
+			from {
+				opacity: .4
+			}
+			to {
+				opacity: 1
+			}
+		}
+	</style>
+
+</head>
+<body>
+  <script src="script.js">
+	</script>
+	<div class="banner">
+    <div class="navbar">
+      <ul href="index.html">
+			<img src="images/logo.png" class="logo">
+      </ul>
+    </div>
+		<div class="content">
+			<h1> Shreeya's DIY Gallery </h1>
+			<h3 style="font-style:italic">Welcome to part 2! <br>This is a showcase of DIY projects and games I have created over the years.</h3><p>For the best experience, use a computer to view this website.
+        <br><br>Click on the arrow keys, and enjoy!</p>
+    </div>
+
+    
+
+<div class="slideshow-container">
+
+<div class="mySlides fade">
+  <img src="../../images/basketball.png" style="width:100%">
+  <h2>1. A mini basketball game I made for my brother's birthday - click on the arrow to swipe and see a demo video!</h2>
+</div>
+
+<div class="mySlides fade">
+  <video controls style="width:100%">
+    <source src="../../images/basketball.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+  </video>
+  <h2>1. Voila! The demo video!</h2>
+</div>
+
+  <div class="mySlides fade">
+    <img src="../../images/soccer1.png" style="width:100%">
+    <h2>2. Mini foosball!</h2>
+  </div>
+
+  <div class="mySlides fade">
+    <img src="../../images/soccer2.png" style="width:100%">
+    <h2>2. Mini foosball!</h2>
+  </div>
+  
+  
+<a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+<a class="next" onclick="plusSlides(1)">&#10095;</a>
+
+</div>
+<br>
+
+<script>
+var slideIndex = 1;
+showSlides(slideIndex);
+
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  var i;
+  var slides = document.getElementsByClassName("mySlides");
+  var dots = document.getElementsByClassName("dot");
+  if (n > slides.length) {slideIndex = 1}    
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";  
+  }
+  for (i = 0; i < dots.length; i++) {
+      dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";  
+  dots[slideIndex-1].className += " active";
+}
+</script>
+
+
+  </body>
+</html>
